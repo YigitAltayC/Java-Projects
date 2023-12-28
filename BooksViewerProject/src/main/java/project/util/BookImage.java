@@ -1,5 +1,8 @@
 package project.util;
 
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
+
 import java.net.URL;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -19,7 +22,22 @@ public class BookImage {
         }
     }
 
-    public BufferedImage getImage() {
+    public BufferedImage getImageVariable() {
         return image;
+    }
+
+    public WritableImage getImage() {
+        WritableImage wr = null;
+        if (image != null) {
+            wr = new WritableImage(image.getWidth(), image.getHeight());
+            PixelWriter pw = wr.getPixelWriter();
+            for (int x = 0; x < image.getWidth(); x++) {
+                for (int y = 0; y < image.getHeight(); y++) {
+                    pw.setArgb(x, y, image.getRGB(x, y));
+                }
+            }
+        }
+
+        return wr;
     }
 }

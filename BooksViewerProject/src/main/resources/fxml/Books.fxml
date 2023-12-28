@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.BooksController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="886.0" style="-fx-background-color: #523334;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.BooksController">
    <children>
-      <HBox prefHeight="58.0" prefWidth="886.0">
+      <HBox prefHeight="58.0" prefWidth="886.0" style="-fx-background-color: #523334;">
          <children>
-            <Label prefHeight="43.0" prefWidth="187.0" text="Books Database" textFill="#507fb9">
+            <Label prefHeight="43.0" prefWidth="187.0" text="Books Database" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="24.0" />
                </font>
@@ -34,25 +33,28 @@
             </TextField>
          </children>
       </HBox>
-      <HBox prefHeight="427.0" prefWidth="886.0">
+      <HBox prefHeight="427.0" prefWidth="886.0" style="-fx-background-color: #333752;">
          <children>
-            <VBox prefHeight="427.0" prefWidth="208.0" />
+            <VBox prefHeight="427.0" prefWidth="208.0" style="-fx-background-color: #1c1a2b;" />
             <HBox prefHeight="427.0" prefWidth="683.0">
                <children>
                   <VBox prefHeight="427.0" prefWidth="235.0">
                      <children>
                         <ImageView fx:id="bookCoverImageView" fitHeight="281.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" />
-                        <HBox prefHeight="28.0" prefWidth="241.0">
+                        <HBox prefHeight="43.0" prefWidth="170.0">
                            <children>
-                              <Button fx:id="prevBookButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="63.0" style="-fx-background-color: #a360b3;" text="Prev" textFill="WHITE">
+                              <Button fx:id="prevBookButton" mnemonicParsing="false" onAction="#onPrevButtonPressed" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #a360b3;" text="&lt;" textFill="WHITE">
                                  <font>
-                                    <Font name="Calibri Bold" size="18.0" />
+                                    <Font name="Calibri Bold" size="23.0" />
                                  </font>
                               </Button>
-                              <Label fx:id="orderCountLabel" alignment="CENTER" prefHeight="34.0" prefWidth="129.0" text="Label" />
-                              <Button fx:id="nextBookButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="65.0" style="-fx-background-color: #60b37d;" text="Next" textFill="WHITE">
+                              <Label fx:id="orderCountLabel" alignment="CENTER" prefHeight="43.0" prefWidth="95.0" text="Label" textFill="WHITE">
                                  <font>
-                                    <Font name="Calibri Bold" size="18.0" />
+                                    <Font name="System Bold" size="24.0" />
+                                 </font></Label>
+                              <Button fx:id="nextBookButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextButtonPressed" prefHeight="34.0" prefWidth="44.0" style="-fx-background-color: #60b37d;" text="&gt;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="23.0" />
                                  </font>
                               </Button>
                            </children>
@@ -65,15 +67,36 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="427.0" prefWidth="446.0">
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="427.0" prefWidth="429.0">
                      <children>
-                        <Label fx:id="bookNameLabel" text="Label" />
-                        <Label fx:id="writerLabel" layoutX="10.0" layoutY="10.0" text="Label" />
-                        <Label fx:id="pageCountLabel" layoutX="10.0" layoutY="27.0" text="Label" />
-                        <Label fx:id="releaseDateLabel" layoutX="10.0" layoutY="44.0" text="Label" />
+                        <Label fx:id="bookNameLabel" alignment="TOP_LEFT" prefHeight="73.0" prefWidth="429.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="writerLabel" layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="427.0" text="Label" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="19.0" />
+                           </font></Label>
+                        <Label fx:id="pageCountLabel" layoutX="10.0" layoutY="27.0" text="Label" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="releaseDateLabel" layoutX="10.0" layoutY="44.0" text="Label" textFill="WHITE" />
                      </children>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
                   </VBox>
                </children>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
             </HBox>
          </children>
       </HBox>

@@ -15,4 +15,7 @@ public interface BooksRepository {
     );
 
     List<Book> getBooks();
+
+    Book getBook(String name);
+
 }
