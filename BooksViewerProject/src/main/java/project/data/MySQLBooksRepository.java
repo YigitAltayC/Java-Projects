@@ -15,11 +15,11 @@ public class MySQLBooksRepository implements BooksRepository{
 
     private static final Logger LOGGER = Logger.getLogger(MySQLBooksRepository.class.getName());
 
-    private static final String SQL_INSERT_BOOK = "INSERT INTO books (name, writer, page_count, release_date, image_url) VALUES (?, ?, ?, ?, ?)";
+    private static final String SQL_INSERT_BOOK = "INSERT INTO books (name, writer, page_count, release_date, image_url, description) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SQL_SELECT_BOOKS = "SELECT * FROM books";
 
     @Override
-    public Book addBook(String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL) {
+    public Book addBook(String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL, String description) {
 
         try (
                 Connection con = MySQLConnection.create();
@@ -31,6 +31,7 @@ public class MySQLBooksRepository implements BooksRepository{
             stmt.setInt(3, pageCount);
             stmt.setDate(4, new java.sql.Date(releaseDate.getTimeInMillis()));
             stmt.setString(5, imageURL);
+            stmt.setString(6, description);
 
             stmt.executeUpdate();
 
@@ -39,7 +40,7 @@ public class MySQLBooksRepository implements BooksRepository{
                 int ID = keys.getInt(1);
 
                 return new Book(
-                        ID, bookName, writer, pageCount, releaseDate, imageURL
+                        ID, bookName, writer, pageCount, releaseDate, imageURL, description
                 );
             }
 
@@ -93,7 +94,7 @@ public class MySQLBooksRepository implements BooksRepository{
         return new Book(
                 rs.getInt("ID"), rs.getString("name"),
                 rs.getString("writer"), rs.getInt("page_count"), calendar,
-                rs.getString("image_url")
+                rs.getString("image_url"), rs.getString("description")
         );
     }
 }

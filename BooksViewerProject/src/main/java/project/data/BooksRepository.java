@@ -11,7 +11,8 @@ public interface BooksRepository {
                  String writer,
                  int pageCount,
                  Calendar releaseDate,
-                 String imageURL
+                 String imageURL,
+                 String description
     );
 
     List<Book> getBooks();

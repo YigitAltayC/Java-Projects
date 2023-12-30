@@ -13,20 +13,25 @@ public class Book {
     private final Calendar releaseDate;
     private BookImage coverImage;
 
-    public Book(int ID, String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL) {
+    private String description;
+
+    public Book(int ID, String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL, String description) {
         this.ID = ID;
         this.bookName = bookName;
         this.writer = writer;
         this.pageCount = pageCount;
         this.releaseDate = releaseDate;
+        this.description = description;
         coverImage = new BookImage(imageURL);
+
     }
 
-    public Book(String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL) {
+    public Book(String bookName, String writer, int pageCount, Calendar releaseDate, String imageURL, String description) {
         this.bookName = bookName;
         this.writer = writer;
         this.pageCount = pageCount;
         this.releaseDate = releaseDate;
+        this.description = description;
         coverImage = new BookImage(imageURL);
     }
 
@@ -48,5 +53,9 @@ public class Book {
 
     public BookImage getCoverImage() {
         return coverImage;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

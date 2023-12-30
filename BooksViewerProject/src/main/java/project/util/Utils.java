@@ -1,5 +1,12 @@
 package project.util;
 
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -40,8 +47,29 @@ public class Utils {
 
         String formatted = format.format(cal.getTime());
         String[] calendarSplit = formatted.split("-");
-        return months[Integer.valueOf(calendarSplit[1])] + " " + calendarSplit[2] + ", " + calendarSplit[0];
+        return months[Integer.parseInt(calendarSplit[1]) - 1] + " " + calendarSplit[2] + ", " + calendarSplit[0];
 
 
+    }
+
+    public static WritableImage getWritableImage(String imageUrl)
+    {
+        try {
+            BufferedImage image = ImageIO.read(new URL(imageUrl));
+            WritableImage wr = null;
+            if (image != null) {
+                wr = new WritableImage(image.getWidth(), image.getHeight());
+                PixelWriter pw = wr.getPixelWriter();
+                for (int x = 0; x < image.getWidth(); x++) {
+                    for (int y = 0; y < image.getHeight(); y++) {
+                        pw.setArgb(x, y, image.getRGB(x, y));
+                    }
+                }
+            }
+
+            return wr;
+        } catch (IOException e) {
+            return null;
+        }
     }
 }
