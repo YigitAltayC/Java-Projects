@@ -24,6 +24,7 @@
 <body>
     <div class="welcome-message">
         <h2>Welcome to our page ${username} <span id="namePlaceholder"></span></h2>
+        <div>Click this to: <a href="list-todos">View Todo-List</a> </div>
     </div>
 </body>
 </html>
