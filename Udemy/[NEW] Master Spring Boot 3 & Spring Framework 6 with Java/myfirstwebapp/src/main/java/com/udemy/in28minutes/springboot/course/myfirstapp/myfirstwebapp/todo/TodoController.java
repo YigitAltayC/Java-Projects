@@ -1,7 +1,9 @@
 package com.udemy.in28minutes.springboot.course.myfirstapp.myfirstwebapp.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +43,10 @@ public class TodoController {
 
     @RequestMapping(value = "add-todo", method = RequestMethod.POST)
     public String addNewTodo(
-            ModelMap model, Todo todo){
+            ModelMap model, @Valid Todo todo, BindingResult result){
+
+        if(result.hasErrors())
+            return "addTodo";
 
         service.addTodo(
                 (String)model.get("username"),
@@ -49,6 +54,42 @@ public class TodoController {
                 todo.getTargetDate(),
                 false);
 
+        return "redirect:list-todos";
+    }
+
+    @RequestMapping(value="update-todo", method = RequestMethod.GET)
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap model){
+        Todo todo = service.getTodoWith(id);
+        model.put("todo", todo);
+        return "updateTodo";
+    }
+
+    @RequestMapping(value = "update-todo", method = RequestMethod.POST)
+    public String updateTodo(
+            ModelMap model, @Valid Todo todo, BindingResult result){
+
+        if(result.hasErrors())
+            return "updateTodo";
+
+        todo.setUsername(
+                (String) model.get("username")
+        );
+
+        service.updateTodo(todo);
+        return "redirect:list-todos";
+    }
+
+    /**
+     * RequestParam demek, URL'de yazacak demek
+     * delete-todo?id=0 gibi
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping("delete-todo")
+    public String deleteTodo(@RequestParam int id){
+
+        service.deleteById(id);
         return "redirect:list-todos";
     }
 

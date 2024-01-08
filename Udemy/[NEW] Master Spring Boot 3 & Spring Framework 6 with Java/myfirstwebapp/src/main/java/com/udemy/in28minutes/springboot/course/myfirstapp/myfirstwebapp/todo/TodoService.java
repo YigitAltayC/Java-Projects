@@ -1,10 +1,12 @@
 package com.udemy.in28minutes.springboot.course.myfirstapp.myfirstwebapp.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,6 +35,13 @@ public class TodoService {
                 .collect(Collectors.toList());
     }
 
+    public Todo getTodoWith(int id)
+    {
+        Predicate<? super Todo> predicate
+                = todo -> todo.getId() == id;
+        return todoList.stream().filter(predicate).findFirst().get();
+    }
+
     public void addTodo(String username, String description, LocalDate targetDate, boolean isDone)
     {
         Todo todo = new Todo(
@@ -44,5 +53,18 @@ public class TodoService {
         );
 
         todoList.add(todo);
+    }
+
+    public void updateTodo(@Valid Todo todo)
+    {
+        deleteById(todo.getId());
+        todoList.add(todo);
+    }
+
+    public void deleteById(int id) {
+
+        Predicate<? super Todo> predicate
+                = todo -> todo.getId() == id;
+        todoList.removeIf(predicate);
     }
 }

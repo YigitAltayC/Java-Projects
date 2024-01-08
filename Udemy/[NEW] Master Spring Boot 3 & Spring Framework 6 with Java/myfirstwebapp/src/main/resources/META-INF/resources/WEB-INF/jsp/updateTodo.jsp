@@ -1,5 +1,6 @@
 <%@ include file="common/header.jspf"%>
 
+
     <style>
         body {
             background-color: #f4f4f4;
@@ -49,10 +50,9 @@
 
 <%@ include file="common/headToBodyTag.jspf"%>
 
-
     <%@ include file="common/navigation.jspf"%>
 
-    <h2>Todo Details</h2>
+    <h2>Update Todo: ${todo.description}</h2>
 
     <form:form method="post" modelAttribute = "todo">
 
@@ -62,20 +62,19 @@
 
         <form:errors path="description" cssClass="text-warning"/>
         <label for="description">Description:
-            <form:input type="text" path="description" required="required"/>
+            <form:input type="text" path="description" required="required" value="${todo.description}"/>
         </label>
 
 
-
         <label for="targetDate">Target Date:
-            <form:input type="date" path="targetDate" required="required"/>
+            <form:input type="date" path="targetDate" required="required" value="${todo.targetDate}"/>
         </label>
 
         <label for="done" type="hidden" value="Is Done?">
              <form:input type="hidden" path="done" required="required"/>
         </label>
 
-        <input type="submit" class="btn btn-success" value="Create Todo"></input>
+        <input type="submit" class="btn btn-success" value="Edit Todo"></input>
     </form:form>
 
 <%@ include file="common/footer.jspf"%>

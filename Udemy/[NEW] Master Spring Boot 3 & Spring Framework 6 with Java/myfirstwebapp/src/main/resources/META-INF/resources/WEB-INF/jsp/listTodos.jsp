@@ -1,18 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
-    <title>Todo List</title>
+<%@ include file="common/header.jspf"%>
 
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
-            margin: 50px;
         }
 
         h2 {
@@ -42,8 +33,11 @@
             background-color: #f5f5f5;
         }
     </style>
-</head>
-<body>
+
+<%@ include file="common/headToBodyTag.jspf"%>
+
+
+    <%@ include file="common/navigation.jspf"%>
 
     <h2>${username} - Todo List</h2>
 
@@ -55,6 +49,8 @@
                 <th>Description</th>
                 <th>Target Date</th>
                 <th>Done</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -66,6 +62,9 @@
                     <td>${todo.description}</td>
                     <td>${todo.targetDate}</td>
                     <td>${todo.done}</td>
+                    <td> <a href ="delete-todo?id=${todo.id}" class="btn btn-warning">Remove</a> </td>
+                    <td> <a href ="update-todo?id=${todo.id}" class="btn btn-success">Edit</a> </td>
+
                 </tr>
             </c:forEach>
         </tbody>
@@ -73,8 +72,5 @@
 
     <a href ="add-todo" class="btn btn-success">Add New Task</a>
 
-    <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
+<%@ include file="common/footer.jspf"%>
 
-</body>
-</html>
