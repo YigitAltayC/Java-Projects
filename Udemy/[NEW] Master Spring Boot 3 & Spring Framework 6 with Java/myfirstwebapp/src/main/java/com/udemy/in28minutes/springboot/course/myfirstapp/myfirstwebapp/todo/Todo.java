@@ -1,12 +1,29 @@
 package com.udemy.in28minutes.springboot.course.myfirstapp.myfirstwebapp.todo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
+
+/** We will make Todo an entity, so it can be used as a Database/H2 object.
+ *  It will also become a bean that will be created under JPA
+ */
+@Entity
 public class Todo {
 
 
+    /**
+     * An entity should have a default constructor
+     */
+    public Todo(){
+
+    }
+
+    @Id
+    @GeneratedValue
     private int id;
     private String username;
 

@@ -24,6 +24,13 @@ public class TodoService {
                 LocalDate.now().plusDays(5), false));
     }
 
+    public List<Todo> findByUsername(String username) {
+        Predicate<? super Todo> predicate
+                = todo -> todo.getUsername().equalsIgnoreCase(username);
+
+        return todoList.stream().filter(predicate).toList();
+    }
+
     public List<Todo> getTodoList(){
         return todoList;
     }
