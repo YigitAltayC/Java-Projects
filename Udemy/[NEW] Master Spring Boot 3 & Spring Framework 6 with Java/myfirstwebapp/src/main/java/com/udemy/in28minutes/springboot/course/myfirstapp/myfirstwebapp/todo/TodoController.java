@@ -56,7 +56,7 @@ public class TodoController {
             return "addTodo";
 
         service.addTodo(
-                (String)model.get("username"),
+                getLoggedinUsername(),
                 todo.getDescription(),
                 todo.getTargetDate(),
                 false);
@@ -79,7 +79,7 @@ public class TodoController {
             return "updateTodo";
 
         todo.setUsername(
-                (String) model.get("username")
+                getLoggedinUsername()
         );
 
         service.updateTodo(todo);
