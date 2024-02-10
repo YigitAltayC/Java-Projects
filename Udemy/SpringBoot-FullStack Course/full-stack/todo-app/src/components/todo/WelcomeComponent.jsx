@@ -19,10 +19,7 @@ function WelcomeComponent(){
              .then( (response) => successfulResponse(response))
              .catch( (error) => console.log(error))
              .finally( () => console.log("cleanup"))
-        /*retrieveHelloWorldBean()
-            .then( (response) => successfulResponse(response) )
-            .catch( (error) => console.log(error) )
-            .finally( () => console.log("cleanup") )*/
+        
     }
 
     function successfulResponse(response){

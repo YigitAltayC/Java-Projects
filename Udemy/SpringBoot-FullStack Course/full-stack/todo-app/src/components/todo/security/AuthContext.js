@@ -7,7 +7,7 @@ export const AuthContext = createContext()
 // 2. Create a hook so anyone can use this context
 export const useAuth = () => useContext(AuthContext)
 
-// 2. Share the created context with other components 
+// 3. Share the created context with other components 
 
 export default function AuthProvider({children}){
 

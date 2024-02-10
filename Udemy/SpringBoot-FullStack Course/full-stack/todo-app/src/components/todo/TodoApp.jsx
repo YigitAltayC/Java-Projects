@@ -7,8 +7,18 @@ import ListTodosComponent from './ListTodosComponent'
 import ErrorMessageComponent from './ErrorComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LoginComponent from './LoginComponent'
+import TodoComponent from './TodoComponent'
 import AuthProvider, { useAuth } from './security/AuthContext'
 
+{ /** 
+    A function component with parameter children, should contain other tags as parameter 
+    Like this:
+    <AuthenticatedRoute>
+        <other tag>
+        <another tag>
+        ...
+    <AuthenticatedRoute/>
+*/}
 
 function AuthenticatedRoute({children}) {
     const authContext = useAuth()
@@ -19,8 +29,11 @@ function AuthenticatedRoute({children}) {
     return <Navigate to="/" />
 }
 
+
 export default function TodoApp()
 {
+    { /*These tags on below are for Routing to different parts of the application.*/}
+
     return (
         <div className="todoApp">
 
@@ -43,6 +56,13 @@ export default function TodoApp()
                         <Route path='/todos' element={
                              <AuthenticatedRoute>
                                 <ListTodosComponent />
+                             </AuthenticatedRoute> 
+                              
+                        }/>
+
+                        <Route path='/todo/:id' element={
+                             <AuthenticatedRoute>
+                                <TodoComponent />
                              </AuthenticatedRoute> 
                               
                         }/>

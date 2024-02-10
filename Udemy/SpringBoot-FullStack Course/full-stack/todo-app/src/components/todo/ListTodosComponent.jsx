@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { deleteTodoApi, retrieveAllTodosForUsername } from "./api/TodoApiService"
 import { useAuth } from "./security/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 function ListTodosComponent(){
 
@@ -8,6 +9,7 @@ function ListTodosComponent(){
     const targetDate = new Date(today.getFullYear() + 12, today.getMonth(), today.getDay())
 
 
+    const navigate = useNavigate()
     const authContext = useAuth()
 
     const username = authContext.username
@@ -40,6 +42,11 @@ function ListTodosComponent(){
 
     }
 
+    function updateTodo(id) {
+        navigate(`/todo/${id}`)
+
+    }
+
     return (
         // container className belongs to boostrap
         <div className='container'>
@@ -51,10 +58,10 @@ function ListTodosComponent(){
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Description</th>
                             <th>Is Done?</th>
                             <th>Deadline Date</th>
+                            <th></th>
                             <th></th>
                         </tr>
 
@@ -64,11 +71,11 @@ function ListTodosComponent(){
                         todos.map(
                             todo => (
                                 <tr key={todo.id}>
-                                    <td>{todo.id}</td>
                                     <td>{todo.description}</td>
                                     <td>{todo.done.toString()}</td>
                                     <td>{todo.targetDate.toString()}</td>
                                     <td> <button className="btn btn-warning" onClick={() => deleteTodo(todo.id)}>Delete</button></td>
+                                    <td> <button className="btn btn-success" onClick={() => updateTodo(todo.id)}>Update</button></td>
                                 </tr>
                             )
                         )
