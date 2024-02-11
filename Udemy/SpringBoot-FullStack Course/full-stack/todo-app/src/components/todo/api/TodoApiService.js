@@ -27,3 +27,8 @@ export const retrieveTodoApi
 export const updateTodoApi
     = (username, id, todo) => apiClient.put(`/users/${username}/todos/${id}`, todo)
     // http://localhost:8080/users/root/todos
+
+
+export const createTodoApi
+    = (username, todo) => apiClient.post(`/users/${username}/todos`, todo)
+    // http://localhost:8080/users/root/todos

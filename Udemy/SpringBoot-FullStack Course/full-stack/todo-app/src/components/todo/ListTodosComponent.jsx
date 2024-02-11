@@ -47,6 +47,10 @@ function ListTodosComponent(){
 
     }
 
+    function addNewTodo(){
+        navigate(`/todo/-1`)
+    }
+
     return (
         // container className belongs to boostrap
         <div className='container'>
@@ -83,6 +87,8 @@ function ListTodosComponent(){
                     </tbody>
                 </table>
             </div>
+            <div className="btn btn-success m-3" onClick={addNewTodo}>Add New Todo</div>
+
         </div>
     )
 }
