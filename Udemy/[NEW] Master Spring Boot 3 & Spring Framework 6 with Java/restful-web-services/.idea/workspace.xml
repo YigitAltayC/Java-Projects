@@ -5,69 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89059c1e-f908-469d-8da0-9b1618894c32" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/src/main/java/com/udemy/in28minutes/springboot/course/learnspringboot/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/src/main/java/com/udemy/in28minutes/springboot/course/learnspringboot/CourseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/src/main/java/com/udemy/in28minutes/springboot/course/learnspringboot/LearnSpringBootApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring-boot/src/test/java/com/udemy/in28minutes/springboot/course/learnspringboot/LearnSpringBootApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/MyfirstwebappApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/SayHelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/login/WelcomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/repo/TodoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/secuity/SpringSecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/todo/Todo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/todo/TodoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/todo/TodoControllerJPA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/todo/TodoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/addTodo.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/common/footer.jspf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/common/headToBodyTag.jspf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/common/header.jspf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/common/navigation.jspf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/listTodos.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/updateTodo.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/META-INF/resources/WEB-INF/jsp/welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myfirstwebapp/src/test/java/com/udemy/in28minutes/springboot/course/myfirstapp/myfirstwebapp/MyfirstwebappApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/RestfulWebServicesApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/exception/CustomizedResponseEntityExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/exception/ErrorDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/helloworld/HelloWorldBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/helloworld/HelloWorldController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/jpa/PostRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/jpa/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/Post.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/UserDaoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/UserJpaResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/user/UserResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/in28minutes/rest/webservices/restfulwebservices/RestfulWebServicesApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/basic/BasicAuthenticationSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/src/main/java/com/in28minutes/rest/webservices/restfulwebservices/basic/BasicAuthenticationSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/target/classes/com/in28minutes/rest/webservices/restfulwebservices/basic/BasicAuthenticationSecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-FullStack Course/full-stack/01-rest-api-starting-code/target/classes/com/in28minutes/rest/webservices/restfulwebservices/basic/BasicAuthenticationSecurityConfiguration.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/bewar/Github/Java-Projects/Udemy/SpringBoot-FullStack Course/restful-web-services",
+    "last_opened_file_path": "C:/Users/bewar/Github/Java-Projects/Udemy/[NEW] Master Spring Boot 3 & Spring Framework 6 with Java/restful-web-services",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
