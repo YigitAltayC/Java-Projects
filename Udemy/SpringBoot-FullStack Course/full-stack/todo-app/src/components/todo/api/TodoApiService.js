@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiClient } from './ApiClient';
 
 
 /**
@@ -6,11 +7,7 @@ import axios from 'axios';
  * After we create an instance of an axios object,
  * We can use to get rid of the localhost URL on every service function.
  */
-const apiClient = axios.create(
-    {
-        baseURL: 'http://localhost:8080'
-    }
-)
+
 
 export const retrieveAllTodosForUsername
     = (username) => apiClient.get(`/users/${username}/todos`)

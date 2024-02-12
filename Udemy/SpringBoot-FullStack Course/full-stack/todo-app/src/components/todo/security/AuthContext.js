@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createContext, useContext } from "react";
 import { executeBasicAuthenticationService } from '../api/HelloWorldApiService';
+import { apiClient } from '../api/ApiClient';
 
 // 1. Create a context
 export const AuthContext = createContext()
@@ -15,8 +16,9 @@ export default function AuthProvider({children}){
     const [isAuthenticated, setAuthenticated] = useState(false)
     
     const [username, setUsername] = useState(null)
+    const [token, setToken] = useState(null)
 
-    const valuesToBeShared = {isAuthenticated, login, logout, username}
+    const valuesToBeShared = {isAuthenticated, login, logout, username, token}
 
 
     
@@ -36,16 +38,41 @@ export default function AuthProvider({children}){
     } */
 
     // With auth
-    function login(username, password) {
+    async function login(username, password) {
 
         const baToken = 'Basic ' + window.btoa(username + ":" + password)
 
-        executeBasicAuthenticationService(baToken)
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
+        /* Wait for successful response. 
+         * Don't execute this method again 
+         * until this method is completely executed.
+         */
+        try {
+            const response = await executeBasicAuthenticationService(baToken)
+            
 
-        setAuthenticated(false)
+            if(response.status==200){
+                setAuthenticated(true)
+                setToken(baToken)
+                setUsername(username)
 
+                apiClient.interceptors.request.use(
+                    (config) => {
+                        console.log('intercepting and adding a token')
+                        config.headers.Authorization = baToken
+                        return config
+                    }
+                )
+
+
+                return true
+            } else {
+                logout()
+                return false
+            }
+        } catch(error) {
+            logout()
+            return false
+        }
         /** 
          * Will be completed after setting full auth.
         if(executeBasicAuthenticationService){
@@ -62,6 +89,8 @@ export default function AuthProvider({children}){
 
     function logout(){
         setAuthenticated(false)
+        setToken(null)
+        setUsername(null)
     }
 
     return (

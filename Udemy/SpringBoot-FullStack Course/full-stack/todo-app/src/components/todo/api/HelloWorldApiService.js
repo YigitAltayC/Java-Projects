@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiClient } from './ApiClient';
 
 
 /**
@@ -6,11 +7,7 @@ import axios from 'axios';
  * After we create an instance of an axios object,
  * We can use to get rid of the localhost URL on every service function.
  */
-const apiClient = axios.create(
-    {
-        baseURL: 'http://localhost:8080'
-    }
-)
+
 
 export const retrieveHelloWorldBean 
     = () => apiClient.get('http://localhost:8080/hello-world-bean')
@@ -23,12 +20,12 @@ export const retrieveHelloWorldBean
  * Retrieve with authorization
  */
 export const retrieveHelloWorldPathVariable
-    = (username) => apiClient.get(`/hello-world/path-variable/${username}`, {
+    = (username, token) => apiClient.get(`/hello-world/path-variable/${username}`) /*, {
         headers: {
             // Authorization's value equals to the 
-            Authorization: 'Basic cm9vdDpkdW1teQ=='
+            Authorization: token
         }
-    })
+    })*/
 
 export const executeBasicAuthenticationService
     = (token) => apiClient.get(`/basic-auth`, {

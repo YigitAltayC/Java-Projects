@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {useParams, Link} from 'react-router-dom'
 import { retrieveHelloWorldBean, retrieveHelloWorldPathVariable } from './api/HelloWorldApiService';
 import axios from 'axios';
+import { useAuth } from './security/AuthContext';
 
 
 function WelcomeComponent(){
@@ -10,12 +11,12 @@ function WelcomeComponent(){
     // This actually indicates that, welcome component should have an username parameter
     const { username } = useParams();
     const [message, setMessage] = useState(null)
-
+    const authContext = useAuth();
 
     function callHelloWorldRestApi() {
         console.log("called")
 
-        retrieveHelloWorldPathVariable()
+        retrieveHelloWorldPathVariable(username, authContext.token)
              .then( (response) => successfulResponse(response))
              .catch( (error) => console.log(error))
              .finally( () => console.log("cleanup"))

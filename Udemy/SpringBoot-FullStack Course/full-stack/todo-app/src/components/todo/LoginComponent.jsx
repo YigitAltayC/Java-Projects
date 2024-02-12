@@ -28,8 +28,12 @@ function LoginComponent(){
         setPassword(event.target.value)
     }
 
-    function handleSubmit() {
-        if(authContext.login(username, password)){
+    /**
+     * Since login is async, handleSubmit also has to async
+     * Async functions should be called with 'await'
+     */
+    async function handleSubmit() {
+        if(await authContext.login(username, password)){
             /** 
             setShowSuccessMessage(true);
             setShowErrorMessage(false);
