@@ -1,29 +1,30 @@
 package com.in28minutes.rest.webservices.restfulwebservices.todo;
 
+import com.in28minutes.rest.webservices.restfulwebservices.todo.repository.TodoRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RestController
-public class TodoResource {
+@RestController
+public class TodoJpaResource {
 
-    private TodoService todoService;
+    private TodoRepository repository;
 
-    public TodoResource(TodoService todoService) {
-        this.todoService = todoService;
+    public TodoJpaResource(TodoRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping("/users/{username}/todos")
     public List<Todo> retrieveTodos(@PathVariable String username)
     {
-        return todoService.findByUsername(username);
+        return repository.findByUsername(username);
     }
 
     @GetMapping("/users/{username}/todos/{id}")
     public Todo retrieveTodo(@PathVariable String username, @PathVariable int id)
     {
-        return todoService.findById(id);
+        return repository.findById(id).get();
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")
@@ -31,7 +32,7 @@ public class TodoResource {
             @PathVariable String username,
             @PathVariable int id)
     {
-        todoService.deleteById(id);
+        repository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
@@ -41,7 +42,7 @@ public class TodoResource {
             @PathVariable int id,
             @RequestBody Todo todo)
     {
-        todoService.updateTodo(todo);
+        repository.save(todo);
         return todo;
     }
 
@@ -50,13 +51,16 @@ public class TodoResource {
             @PathVariable String username,
             @RequestBody Todo todo)
     {
-        Todo createdTodo = todoService.addTodo(
+        todo.setUsername(username);
+        todo.setId(null);
+        /**Todo createdTodo = todoService.addTodo(
                 username,
                 todo.getDescription(),
                 todo.getTargetDate(),
                 todo.isDone()
-        );
-        return createdTodo;
+        );*/
+        return repository.save(todo);
     }
+
 
 }

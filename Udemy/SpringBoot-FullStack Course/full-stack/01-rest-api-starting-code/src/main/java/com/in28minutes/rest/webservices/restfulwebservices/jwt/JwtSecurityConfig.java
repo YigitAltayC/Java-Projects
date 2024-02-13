@@ -88,7 +88,7 @@ public class JwtSecurityConfig {
      */
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("root")
+        UserDetails user = User.withUsername("yiit")
                 .password("{noop}dummy")
                 .authorities("read")
                 .roles("USER")
